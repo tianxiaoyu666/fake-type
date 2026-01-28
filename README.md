@@ -32,7 +32,7 @@
 
 ### 方式二：从源码构建
 ```bash
-git clone https://github.com/your-username/fake-type.git
+git clone https://github.com/tianxiaoyu666/fake-type.git
 cd fake-type
 npm install
 npm run compile
