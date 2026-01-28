@@ -1,6 +1,7 @@
 node_modules/
 out/
 *.vsix
+!fake-type-0.1.0.vsix
 .vscode-test/
 *.log
 
