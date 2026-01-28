@@ -1,0 +1,162 @@
+{
+  "name": "fake-type",
+  "displayName": "Fake Type",
+  "description": "演示神器 - 假装打代码、假终端输出",
+  "version": "0.1.0",
+  "publisher": "your-name",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/example/fake-type"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "fakeType",
+          "title": "Fake Type",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "fakeType": [
+        {
+          "type": "webview",
+          "id": "fakeTypePasteArea",
+          "name": "代码映射"
+        },
+        {
+          "id": "fakeTypeFiles",
+          "name": "已添加映射"
+        },
+        {
+          "type": "webview",
+          "id": "fakeTypeTerminal",
+          "name": "终端命令"
+        },
+        {
+          "id": "fakeTypeTerminalCommands",
+          "name": "已添加命令"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "fakeType.toggle",
+        "title": "Fake Type: 切换启用/禁用",
+        "icon": "$(debug-pause)"
+      },
+      {
+        "command": "fakeType.setFromClipboard",
+        "title": "Fake Type: 从剪贴板加载（当前文件）",
+        "icon": "$(clippy)"
+      },
+      {
+        "command": "fakeType.reset",
+        "title": "Fake Type: 重置到开头",
+        "icon": "$(debug-restart)"
+      },
+      {
+        "command": "fakeType.clearAll",
+        "title": "Fake Type: 清除所有映射",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "fakeType.deleteMapping",
+        "title": "删除映射",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "fakeType.resetMapping",
+        "title": "重置进度",
+        "icon": "$(debug-restart)"
+      },
+      {
+        "command": "fakeType.openDemoTerminal",
+        "title": "Fake Type: 打开演示终端",
+        "icon": "$(terminal)"
+      },
+      {
+        "command": "fakeType.deleteTerminalCommand",
+        "title": "删除命令",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "fakeType.resetTerminalCommands",
+        "title": "重置进度",
+        "icon": "$(debug-restart)"
+      },
+      {
+        "command": "fakeType.clearAllTerminalCommands",
+        "title": "清除所有命令",
+        "icon": "$(trash)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "fakeType.toggle",
+          "when": "view == fakeTypeFiles",
+          "group": "navigation@1"
+        },
+        {
+          "command": "fakeType.clearAll",
+          "when": "view == fakeTypeFiles",
+          "group": "navigation@2"
+        },
+        {
+          "command": "fakeType.openDemoTerminal",
+          "when": "view == fakeTypeTerminalCommands",
+          "group": "navigation@1"
+        },
+        {
+          "command": "fakeType.resetTerminalCommands",
+          "when": "view == fakeTypeTerminalCommands",
+          "group": "navigation@2"
+        },
+        {
+          "command": "fakeType.clearAllTerminalCommands",
+          "when": "view == fakeTypeTerminalCommands",
+          "group": "navigation@3"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "fakeType.resetMapping",
+          "when": "view == fakeTypeFiles && viewItem == fileMapping",
+          "group": "inline@1"
+        },
+        {
+          "command": "fakeType.deleteMapping",
+          "when": "view == fakeTypeFiles && viewItem == fileMapping",
+          "group": "inline@2"
+        },
+        {
+          "command": "fakeType.deleteTerminalCommand",
+          "when": "view == fakeTypeTerminalCommands && viewItem == terminalCommand",
+          "group": "inline@1"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "^18.0.0",
+    "typescript": "^5.0.0"
+  }
+}

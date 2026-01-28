@@ -1,0 +1,48 @@
+{
+  "name": "fake-type",
+  "displayName": "Fake Type",
+  "description": "预先准备内容，乱打键盘也能输出正确代码的演示神器",
+  "version": "0.0.1",
+  "publisher": "your-name",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "fakeType.toggle",
+        "title": "Fake Type: 切换启用/禁用"
+      },
+      {
+        "command": "fakeType.setFromClipboard",
+        "title": "Fake Type: 从剪贴板加载内容"
+      },
+      {
+        "command": "fakeType.setFromSelection",
+        "title": "Fake Type: 从选中文本加载内容"
+      },
+      {
+        "command": "fakeType.reset",
+        "title": "Fake Type: 重置到开头"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "^18.0.0",
+    "typescript": "^5.0.0"
+  }
+}
+
