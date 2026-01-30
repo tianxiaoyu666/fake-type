@@ -177,9 +177,7 @@ npx @vscode/vsce package --allow-missing-repository --allow-star-activation
 
 ## 演示效果
 
-![Fake Type 演示](media/demo.gif)
-
-看到了吗？随便敲键盘，代码自己就出来了。评委在旁边点头称赞，殊不知选手只是在"表演"。
+看开头的动图就知道了。随便敲键盘，代码自己就出来了。评委在旁边点头称赞，殊不知选手只是在"表演"。
 
 这就是技能大赛的现状：
 - **赛前** - 不是学技术，是背代码；不是练思路，是练手速
@@ -200,7 +198,7 @@ npx @vscode/vsce package --allow-missing-repository --allow-star-activation
 - 保持自信的表情
 - 偶尔皱眉思考一下
 - 适当停顿，假装在想逻辑
-- 偶尔用一下补全，显得更真实（演示中有展示）
+- 偶尔用一下补全，显得更真实
 - 打错了就 `Ctrl+Z`，很自然
 
 ---
