@@ -5,3 +5,6 @@ out/
 .vscode-test/
 *.log
 
+# 动画制作过程文件
+demo-video/
+

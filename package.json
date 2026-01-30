@@ -147,6 +147,24 @@
           "group": "inline@1"
         }
       ]
+    },
+    "keybindings": [
+      {
+        "command": "fakeType.toggle",
+        "key": "ctrl+f2",
+        "mac": "cmd+f2",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "title": "Fake Type",
+      "properties": {
+        "fakeType.toggleShortcut": {
+          "type": "string",
+          "default": "ctrl+f2",
+          "description": "切换启用/禁用的快捷键（修改后需要在 键盘快捷方式 中手动更新）。注意：请避免与 VS Code 内置快捷键冲突，如 F2（重命名）、Ctrl+F2（选择所有匹配项）等。"
+        }
+      }
     }
   },
   "scripts": {
